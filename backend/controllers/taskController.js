@@ -16,3 +16,13 @@ exports.createTask = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+// Get all tasks for logged-in user
+exports.getTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find({ userId: req.user.id });
+    res.json(tasks);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
