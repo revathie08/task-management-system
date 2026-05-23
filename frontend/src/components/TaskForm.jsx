@@ -19,17 +19,25 @@ const TaskForm = ({ tasks, setTasks, editingTask, setEditingTask }) => {
   }, [editingTask]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
+  e.preventDefault();
+  try {
+    if (editingTask) {
+      const response = await axiosInstance.put(`/api/tasks/${editingTask._id}`, formData, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      setTasks(tasks.map((task) => (task._id === response.data._id ? response.data : task)));
+    } else {
       const response = await axiosInstance.post('/api/tasks', formData, {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setTasks([...tasks, response.data]);
-      setFormData({ title: '', description: '', dueDate: '' });
-    } catch (error) {
-      alert('Failed to save task.');
     }
-  };
+    setEditingTask(null);
+    setFormData({ title: '', description: '', dueDate: '' });
+  } catch (error) {
+    alert('Failed to save task.');
+  }
+};
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded mb-6">
