@@ -28,7 +28,7 @@ const AdminTaskList = ({ tasks, onStatusChange }) => {
                 <td className="border p-2">
                   <select
                     value={task.status}
-                    onChange={(e) => console.log('Status changed:', e.target.value)}
+                    onChange={(e) => onStatusChange(task._id, e.target.value)}
                     className="p-1 border rounded"
                   >
                     <option value="Pending">Pending</option>

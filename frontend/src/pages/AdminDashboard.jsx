@@ -33,6 +33,21 @@ const AdminDashboard = () => {
     fetchData();
   }, [activeTab, user]);
 
+  const handleStatusChange = async (taskId, newStatus) => {
+    try {
+      const response = await axiosInstance.put(
+        `/api/tasks/status/${taskId}`,
+        { status: newStatus },
+        { headers: { Authorization: `Bearer ${user.token}` } }
+      );
+      setTasks(tasks.map((task) => 
+        task._id === taskId ? { ...task, status: response.data.status } : task
+      ));
+    } catch (error) {
+      alert('Failed to update status.');
+    }
+  };
+
   const handleLogout = () => {
     logout();
     navigate('/login');
@@ -64,7 +79,9 @@ const AdminDashboard = () => {
       </div>
 
       {activeTab === 'users' && <UserList users={users} />}
-      {activeTab === 'tasks' && <AdminTaskList tasks={tasks} />}
+      {activeTab === 'tasks' && (
+        <AdminTaskList tasks={tasks} onStatusChange={handleStatusChange} />
+      )}
     </div>
   );
 };
