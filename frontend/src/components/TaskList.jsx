@@ -1,6 +1,11 @@
 import { useAuth } from '../context/AuthContext';
 
 const TaskList = ({ tasks, setEditingTask }) => {
+  const handleDelete = (taskId) => {
+    console.log('Delete task:', taskId);
+    // API call will be added in next commit
+  };
+
   return (
     <div className="bg-white p-6 shadow-md rounded">
       <h2 className="text-2xl font-bold mb-4">My Tasks</h2>
@@ -17,9 +22,15 @@ const TaskList = ({ tasks, setEditingTask }) => {
               </p>
               <button 
                 onClick={() => setEditingTask(task)}
-                className="bg-yellow-500 text-white px-3 py-1 rounded mt-2"
+                className="bg-yellow-500 text-white px-3 py-1 rounded mt-2 mr-2"
               >
                 Edit
+              </button>
+              <button 
+                onClick={() => handleDelete(task._id)}
+                className="bg-red-500 text-white px-3 py-1 rounded mt-2"
+              >
+                Delete
               </button>
             </li>
           ))}
