@@ -3,27 +3,34 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../axiosConfig';
 import UserList from '../components/UserList';
+import AdminTaskList from '../components/AdminTaskList';
 
 const AdminDashboard = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('users');
   const [users, setUsers] = useState([]);
+  const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    if (activeTab === 'users') {
-      const fetchUsers = async () => {
-        try {
+    const fetchData = async () => {
+      try {
+        if (activeTab === 'users') {
           const response = await axiosInstance.get('/api/auth/users', {
             headers: { Authorization: `Bearer ${user.token}` },
           });
           setUsers(response.data);
-        } catch (error) {
-          alert('Failed to fetch users.');
+        } else if (activeTab === 'tasks') {
+          const response = await axiosInstance.get('/api/tasks/all', {
+            headers: { Authorization: `Bearer ${user.token}` },
+          });
+          setTasks(response.data);
         }
-      };
-      fetchUsers();
-    }
+      } catch (error) {
+        alert('Failed to fetch data.');
+      }
+    };
+    fetchData();
   }, [activeTab, user]);
 
   const handleLogout = () => {
@@ -57,12 +64,7 @@ const AdminDashboard = () => {
       </div>
 
       {activeTab === 'users' && <UserList users={users} />}
-      {activeTab === 'tasks' && (
-        <div className="bg-white p-6 shadow-md rounded">
-          <h2 className="text-2xl font-bold mb-4">Manage Tasks</h2>
-          <p className="text-gray-500">Manage Tasks feature coming next...</p>
-        </div>
-      )}
+      {activeTab === 'tasks' && <AdminTaskList tasks={tasks} />}
     </div>
   );
 };

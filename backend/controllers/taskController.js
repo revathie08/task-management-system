@@ -55,3 +55,12 @@ exports.deleteTask = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.getAllTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find().populate('userId', 'name email');
+    res.json(tasks);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
