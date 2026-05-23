@@ -1,4 +1,4 @@
-const AdminTaskList = ({ tasks }) => {
+const AdminTaskList = ({ tasks, onStatusChange }) => {
   return (
     <div className="bg-white p-6 shadow-md rounded">
       <h2 className="text-2xl font-bold mb-4">All Tasks</h2>
@@ -21,11 +21,21 @@ const AdminTaskList = ({ tasks }) => {
                 <td className="border p-2">{task.title}</td>
                 <td className="border p-2">{task.description}</td>
                 <td className="border p-2">
-                  {task.userId?.name || 'Unknown'} 
+                  {task.userId?.name || 'Unknown'}
                   <br />
                   <span className="text-xs text-gray-500">{task.userId?.email}</span>
                 </td>
-                <td className="border p-2">{task.status}</td>
+                <td className="border p-2">
+                  <select
+                    value={task.status}
+                    onChange={(e) => console.log('Status changed:', e.target.value)}
+                    className="p-1 border rounded"
+                  >
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                </td>
                 <td className="border p-2">
                   {task.dueDate ? new Date(task.dueDate).toLocaleDateString() : '-'}
                 </td>
