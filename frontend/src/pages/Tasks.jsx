@@ -31,7 +31,11 @@ const Tasks = () => {
         editingTask={editingTask} 
         setEditingTask={setEditingTask} 
       />
-      <TaskList tasks={tasks} setEditingTask={setEditingTask} />
+      <TaskList 
+        tasks={tasks} 
+        setTasks={setTasks}
+        setEditingTask={setEditingTask} 
+      />
     </div>
   );
 };
