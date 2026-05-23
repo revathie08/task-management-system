@@ -1,11 +1,23 @@
 import { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
+import axiosInstance from '../axiosConfig';
 
-const TaskForm = () => {
+const TaskForm = ({ tasks, setTasks }) => {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({ title: '', description: '', dueDate: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submit:', formData);
+    try {
+      const response = await axiosInstance.post('/api/tasks', formData, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      setTasks([...tasks, response.data]);
+      setFormData({ title: '', description: '', dueDate: '' });
+    } catch (error) {
+      alert('Failed to save task.');
+      console.error(error);
+    }
   };
 
   return (
