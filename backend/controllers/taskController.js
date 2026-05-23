@@ -26,3 +26,20 @@ exports.getTasks = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.updateTask = async (req, res) => {
+  const { title, description, dueDate } = req.body;
+  try {
+    const task = await Task.findById(req.params.id);
+    if (!task) return res.status(404).json({ message: 'Task not found' });
+    
+    task.title = title || task.title;
+    task.description = description || task.description;
+    task.dueDate = dueDate || task.dueDate;
+    
+    const updatedTask = await task.save();
+    res.json(updatedTask);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

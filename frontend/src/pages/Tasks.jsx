@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
 import axiosInstance from '../axiosConfig';
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
-import { useAuth } from '../context/AuthContext';
 
 const Tasks = () => {
   const { user } = useAuth();
@@ -20,14 +20,18 @@ const Tasks = () => {
         alert('Failed to fetch tasks.');
       }
     };
-
     fetchTasks();
   }, [user]);
 
   return (
     <div className="container mx-auto p-6">
-      <TaskForm tasks={tasks} setTasks={setTasks} />
-      <TaskList tasks={tasks} />
+      <TaskForm 
+        tasks={tasks} 
+        setTasks={setTasks} 
+        editingTask={editingTask} 
+        setEditingTask={setEditingTask} 
+      />
+      <TaskList tasks={tasks} setEditingTask={setEditingTask} />
     </div>
   );
 };

@@ -1,13 +1,11 @@
 import { useAuth } from '../context/AuthContext';
 
-const TaskList = ({ tasks }) => {
-  const { user } = useAuth();
-
+const TaskList = ({ tasks, setEditingTask }) => {
   return (
     <div className="bg-white p-6 shadow-md rounded">
       <h2 className="text-2xl font-bold mb-4">My Tasks</h2>
       {tasks.length === 0 ? (
-        <p className="text-gray-500">No tasks yet. Add your first task!</p>
+        <p className="text-gray-500">No tasks yet.</p>
       ) : (
         <ul>
           {tasks.map((task) => (
@@ -17,7 +15,12 @@ const TaskList = ({ tasks }) => {
               <p className="text-sm text-gray-500">
                 Due: {new Date(task.dueDate).toLocaleDateString()}
               </p>
-              <span className="text-sm text-blue-500">{task.status}</span>
+              <button 
+                onClick={() => setEditingTask(task)}
+                className="bg-yellow-500 text-white px-3 py-1 rounded mt-2"
+              >
+                Edit
+              </button>
             </li>
           ))}
         </ul>
