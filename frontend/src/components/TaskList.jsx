@@ -1,9 +1,18 @@
 import { useAuth } from '../context/AuthContext';
+import axiosInstance from '../axiosConfig';
 
-const TaskList = ({ tasks, setEditingTask }) => {
-  const handleDelete = (taskId) => {
-    console.log('Delete task:', taskId);
-    // API call will be added in next commit
+const TaskList = ({ tasks, setTasks, setEditingTask }) => {
+  const { user } = useAuth();
+
+  const handleDelete = async (taskId) => {
+    try {
+      await axiosInstance.delete(`/api/tasks/${taskId}`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
+      setTasks(tasks.filter((task) => task._id !== taskId));
+    } catch (error) {
+      alert('Failed to delete task.');
+    }
   };
 
   return (
