@@ -56,3 +56,43 @@ cd frontend
 npm install
 npm start
 ```
+
+## Public URL
+
+Application URL:
+http://52.65.192.73:3000
+
+## JIRA Board
+
+JIRA Board URL:
+https://revathiedathikandi.atlassian.net/jira/software/projects/SCRUM/boards/1
+
+## Project Structure
+
+task-management-system/
+├── .github/
+│   └── workflows/
+│       └── run-test.yml
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── tests/
+│   └── server.js
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   └── package.json
+└── README.md
+
+## Automated Testing
+
+The project includes automated backend unit tests implemented using Mocha, Chai, Sinon, and Supertest. GitHub Actions is configured to automatically execute test cases whenever code is pushed to the main branch.
+
+## Conclusion
+
+The Task Management System was successfully developed as a full-stack web application using React.js, Node.js, Express.js, and MongoDB. The system supports role-based authentication and complete CRUD operations for task management. Users can create, view, update, and delete tasks, while administrators can manage users and monitor tasks across the system.
+
+The project demonstrates the application of software development lifecycle concepts including requirements analysis, system design, project planning, UI/UX prototyping, version control, automated testing, CI/CD implementation, and cloud deployment. GitHub feature branches, pull requests, and GitHub Actions were used to support a structured and maintainable development workflow.
+
