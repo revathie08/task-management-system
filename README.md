@@ -90,6 +90,17 @@ task-management-system/
 
 The project includes automated backend unit tests implemented using Mocha, Chai, Sinon, and Supertest. GitHub Actions is configured to automatically execute test cases whenever code is pushed to the main branch.
 
+## Demo Credentials
+
+### User Account
+Email: user@test.com
+Password: password123
+
+### Admin Account
+Email: admin@test.com
+Password: admin123
+
+
 ## Conclusion
 
 The Task Management System was successfully developed as a full-stack web application using React.js, Node.js, Express.js, and MongoDB. The system supports role-based authentication and complete CRUD operations for task management. Users can create, view, update, and delete tasks, while administrators can manage users and monitor tasks across the system.
