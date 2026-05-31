@@ -60,7 +60,7 @@ npm start
 ## Public URL
 
 Application URL:
-http://52.65.192.73:3000
+http://54.206.10.172:3000
 
 ## JIRA Board
 
@@ -84,6 +84,10 @@ task-management-system/
 │   ├── public/
 │   ├── src/
 │   └── package.json
+├── docs/
+│   ├── diagrams/
+│   ├── figma/
+│   └──jira
 └── README.md
 
 ## Automated Testing
@@ -93,8 +97,8 @@ The project includes automated backend unit tests implemented using Mocha, Chai,
 ## Demo Credentials
 
 ### User Account
-Email: user@test.com
-Password: password123
+Email: demo@gmail.com
+Password: demo123
 
 ### Admin Account
 Email: admin@test.com
