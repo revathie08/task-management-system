@@ -1,0 +1,156 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Enhanced Task Management Activity Diagram" id="0">
+    <mxGraphModel dx="3368" dy="971" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="ellipse;html=1;aspect=fixed;fillColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="335" as="geometry" />
+        </mxCell>
+        <mxCell id="login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Login / Sign Up" vertex="1">
+          <mxGeometry height="50" width="180" x="260" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Authenticated?" vertex="1">
+          <mxGeometry height="80" width="130" x="285" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="retry" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Retry Login / Exit" vertex="1">
+          <mxGeometry height="50" width="170" x="40" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="role" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Role?" vertex="1">
+          <mxGeometry height="80" width="130" x="285" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="userdash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="User Dashboard" vertex="1">
+          <mxGeometry height="60" width="180" x="80" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="admindash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;" value="Admin Dashboard" vertex="1">
+          <mxGeometry height="60" width="180" x="470" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="addtask" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Add Task" vertex="1">
+          <mxGeometry height="50" width="130" x="-20" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="viewtask" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="View Task" vertex="1">
+          <mxGeometry height="50" width="130" x="200" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="updatetask" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Update Task" vertex="1">
+          <mxGeometry height="50" width="130" x="10" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="deletetask" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Delete Task" vertex="1">
+          <mxGeometry height="50" width="130" x="160" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="viewusers" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="View Users" vertex="1">
+          <mxGeometry height="50" width="130" x="365" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="managetasks" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Manage Tasks" vertex="1">
+          <mxGeometry height="50" width="130" x="590" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="updatestatus" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Update Task Status" vertex="1">
+          <mxGeometry height="50" width="160" x="495" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="logout" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="Logout" vertex="1">
+          <mxGeometry height="50" width="100" x="315" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;html=1;aspect=fixed;strokeWidth=4;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="350" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="endArrow=block;html=1;" target="login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="login" style="endArrow=block;html=1;" target="auth">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="auth" style="endArrow=block;html=1;" target="retry" value="No">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="auth" style="endArrow=block;html=1;" target="role" value="Yes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="role" style="endArrow=block;html=1;" target="userdash" value="User">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="role" style="endArrow=block;html=1;" target="admindash" value="Admin">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="userdash" style="endArrow=block;html=1;" target="addtask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="userdash" style="endArrow=block;html=1;" target="viewtask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="userdash" style="endArrow=block;html=1;" target="updatetask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="userdash" style="endArrow=block;html=1;" target="deletetask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="addtask" style="dashed=1;endArrow=block;html=1;" target="userdash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="viewtask" style="dashed=1;endArrow=block;html=1;" target="userdash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="updatetask" style="dashed=1;endArrow=block;html=1;" target="userdash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="deletetask" style="dashed=1;endArrow=block;html=1;" target="userdash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="admindash" style="endArrow=block;html=1;" target="viewusers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="admindash" style="endArrow=block;html=1;" target="managetasks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="admindash" style="endArrow=block;html=1;" target="updatestatus">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" source="viewusers" style="dashed=1;endArrow=block;html=1;" target="admindash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e19" edge="1" parent="1" source="managetasks" style="dashed=1;endArrow=block;html=1;" target="admindash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e20" edge="1" parent="1" source="updatestatus" style="dashed=1;endArrow=block;html=1;" target="admindash">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" edge="1" parent="1" source="userdash" style="endArrow=block;html=1;" target="logout">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-40" y="480" />
+              <mxPoint x="-40" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" edge="1" parent="1" source="admindash" style="endArrow=block;html=1;" target="logout">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="480" />
+              <mxPoint x="810" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" edge="1" parent="1" source="logout" style="endArrow=block;html=1;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j4PrXHejlIaG-45WxA-3-1" edge="1" parent="1" style="endArrow=block;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;rounded=1;curved=0;" target="login">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="105" />
+            </Array>
+            <mxPoint x="120" y="180" as="sourcePoint" />
+            <mxPoint x="670" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j4PrXHejlIaG-45WxA-3-2" edge="1" parent="1" source="retry" style="endArrow=block;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="end">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-70" y="210" />
+              <mxPoint x="-70" y="930" />
+            </Array>
+            <mxPoint x="700" y="200" as="sourcePoint" />
+            <mxPoint x="700" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

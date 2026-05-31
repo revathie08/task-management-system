@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="State Machine Diagram - Task Status" id="0">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;" value="stm Task Status State Machine" vertex="1">
+          <mxGeometry height="30" width="350" x="40" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;fontSize=11;fontStyle=2;align=left;" value="Note: Status transitions (Pending → In Progress → Completed) are updated by Admin only. Users can Create, Update task details, and Delete their own tasks." vertex="1">
+          <mxGeometry height="40" width="790" x="40" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;html=1;aspect=fixed;fillColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="10" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="created" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Pending" vertex="1">
+          <mxGeometry height="70" width="150" x="180" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="progress" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="In Progress" vertex="1">
+          <mxGeometry height="70" width="150" x="490" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="completed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Completed" vertex="1">
+          <mxGeometry height="70" width="150" x="810" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="deleted" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="Deleted" vertex="1">
+          <mxGeometry height="70" width="150" x="500" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;html=1;aspect=fixed;strokeWidth=4;fillColor=#ffffff;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="760" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="created" value="user creates task">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="created" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="progress" value="admin updates status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="progress" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="completed" value="admin updates status">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="completed" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=0.5;exitY=0;entryX=0.5;entryY=0;" target="progress" value="admin reopens task">
+          <mxGeometry relative="1" x="-0.1686" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="890" y="100" />
+              <mxPoint x="550" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="created" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" target="deleted" value="user deletes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="progress" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="deleted" value="user deletes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="completed" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" target="deleted" value="user deletes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="deleted" style="endArrow=classic;html=1;strokeWidth=2;fontSize=12;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="end" value="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

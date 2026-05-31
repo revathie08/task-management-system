@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Package Diagram" id="0">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;fontSize=18;fontStyle=1;" value="pkg Task Management System" vertex="1">
+          <mxGeometry height="30" width="350" x="40" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="root" parent="1" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=120;tabHeight=25;tabPosition=left;html=1;whiteSpace=wrap;" value="Task Management System Model" vertex="1">
+          <mxGeometry height="650" width="1180" x="90" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="req" parent="1" style="shape=folder;spacingTop=10;tabWidth=100;tabHeight=25;html=1;whiteSpace=wrap;" value="Requirements Package" vertex="1">
+          <mxGeometry height="120" width="250" x="170" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase" parent="1" style="shape=folder;spacingTop=10;tabWidth=100;tabHeight=25;html=1;whiteSpace=wrap;" value="Use Case Package" vertex="1">
+          <mxGeometry height="120" width="250" x="520" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="behavior" parent="1" style="shape=folder;spacingTop=10;tabWidth=100;tabHeight=25;html=1;whiteSpace=wrap;" value="Behavior Package&lt;br&gt;Activity / Sequence / State Machine" vertex="1">
+          <mxGeometry height="120" width="300" x="870" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="structure" parent="1" style="shape=folder;spacingTop=10;tabWidth=100;tabHeight=25;html=1;whiteSpace=wrap;" value="Structure Package&lt;br&gt;BDD / IBD" vertex="1">
+          <mxGeometry height="120" width="270" x="300" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="parametric" parent="1" style="shape=folder;spacingTop=10;tabWidth=100;tabHeight=25;html=1;whiteSpace=wrap;" value="Parametric Package&lt;br&gt;Performance Constraint" vertex="1">
+          <mxGeometry height="120" width="270" x="730" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="usecase" style="dashed=1;endArrow=open;html=1;" target="req" value="&lt;&lt;import&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="behavior" style="dashed=1;endArrow=open;html=1;" target="usecase" value="&lt;&lt;import&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="structure" style="dashed=1;endArrow=open;html=1;" target="req" value="&lt;&lt;import&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="parametric" style="dashed=1;endArrow=open;html=1;" target="req" value="&lt;&lt;import&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="parametric" style="dashed=1;endArrow=open;html=1;" target="structure" value="&lt;&lt;access&gt;&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

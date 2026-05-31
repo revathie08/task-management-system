@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Internal Block Diagram" id="0">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;spacingTop=15;strokeWidth=2;" value="ibd [block] Task Management System" vertex="1">
+          <mxGeometry height="700" width="1180" x="80" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="ui : User Interface" vertex="1">
+          <mxGeometry height="80" width="180" x="170" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="auth" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="authService : Authentication Service" vertex="1">
+          <mxGeometry height="80" width="220" x="520" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="task" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="taskService : Task Service" vertex="1">
+          <mxGeometry height="80" width="220" x="520" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="admin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="adminService : Admin Service" vertex="1">
+          <mxGeometry height="80" width="220" x="520" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="db" parent="1" style="shape=cylinder3d;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="db : MongoDB Database" vertex="1">
+          <mxGeometry height="120" width="150" x="970" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="userport" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;html=1;" value="User/Admin" vertex="1">
+          <mxGeometry height="70" width="40" x="20" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="userport" style="endArrow=block;startArrow=block;html=1;" target="ui" value="request / response">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="ui" style="endArrow=block;startArrow=block;html=1;" target="auth" value="login/signup/logout">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="ui" style="endArrow=block;startArrow=block;html=1;" target="task" value="task CRUD request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="ui" style="endArrow=block;startArrow=block;html=1;" target="admin" value="admin request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="auth" style="endArrow=block;startArrow=block;html=1;" target="db" value="user credentials">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="task" style="endArrow=block;startArrow=block;html=1;" target="db" value="task data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="admin" style="endArrow=block;startArrow=block;html=1;" target="db" value="users/all tasks">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
